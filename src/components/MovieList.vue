@@ -1,4 +1,5 @@
 <script>
+import { store } from "./../store.js" /* importo store anche in MovieList */
 
 /* MovieList diventa padre di CardMovie */
 import CardMovie from './CardMovie.vue';
@@ -8,7 +9,12 @@ export default{
     name: "MovieList",
     components: { /* includo il figlio CardMovie  */
         CardMovie  
-    } 
+    },
+    data(){
+    return{
+      store, /*così abbiamo accesso allo store (leggo nello store)*/
+    }
+  }
 }
 
 </script>
@@ -16,10 +22,10 @@ export default{
 <template>
 
     <section>
-        MovieList:
+        MovieList
 
         <div>
-            <CardMovie/>
+            <CardMovie v-for="(movie, index) in  store.moviesList" :details="movie" :key="index"/> <!-- una volta popolato l'Arrey di film dobbiamo estrarre dall'arrey gli elementi che ci interessano > dobbiamo poi passare con le prop movie all'oggetto figlio quindi cardMovie, key è utile al browser > Vue utilizza queste chiavi per sapere quali elementi HTML rimuovere o aggiornare e se è necessario crearne di nuovi. -->
         </div>
     </section>
 

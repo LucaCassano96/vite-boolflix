@@ -1,15 +1,24 @@
 <script>
+import { objectToString } from '@vue/shared';
+
 
 /* faccio  export default e do un nome al mio componente*/
 export default{
     name: "CardMovie",
+    props: {
+        details: Object, /* ci facciamo restituire da MovieList tramite details e le props un oggetto  */
+    }
 }
 
 </script>
 
 <template>
 
-    <div>CardMovie</div>
+    <div>
+
+        <h4>{{ details.title }}</h4>
+
+    </div>
 
 </template>
 

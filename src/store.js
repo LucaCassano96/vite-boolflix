@@ -11,7 +11,14 @@ disponibile dentro data().
 import { reactive } from "vue"
 
 export const store = reactive({
-    /* API */
-    /* ARREY VUOTO */
+    api_selection_movies: "https://api.themoviedb.org/3/search/movie?api_key=1915c1891add63daa2fa25ac738dd697",
+    moviesList: [], /* Arrey popolato di film dopo la ricerca dell'utente */
+    searchMovie: "", /*riferimento per il v-model, settiamo sringa vuota così rimane il placeholder come indicazione per l'utente */
+    apiParameter: "&query" /* settiamo il parametro finale dell'api che andremo a mettere nel metodo */
 
 });
+
+
+/* 1915c1891add63daa2fa25ac738dd697 */
+
+
