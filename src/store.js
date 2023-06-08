@@ -31,7 +31,6 @@ export const store = reactive({
 });
 
 
-/* https://api.themoviedb.org/3/search/tv?api_key=1915c1891add63daa2fa25ac738dd697&query=scrubs */
 /* 1915c1891add63daa2fa25ac738dd697 */
 
 

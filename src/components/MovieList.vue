@@ -29,11 +29,7 @@ export default{
             <CardMovie v-for="(movie, index) in  store.moviesList" :detailsMovie="movie" :key="index"/> <!-- una volta popolato l'Arrey di film dobbiamo estrarre dall'arrey gli elementi che ci interessano > dobbiamo poi passare con le prop movie all'oggetto figlio quindi cardMovie, key è utile al browser > Vue utilizza queste chiavi per sapere quali elementi HTML rimuovere o aggiornare e se è necessario crearne di nuovi. -->
         </div>
 
-        
-        <div>
-            <h2>SerieTvList</h2> 
-            <CardMovie v-for="(serie, index) in  store.seriesList" :detailSerie="serie" :key="index"/> 
-        </div>
+    
         
     </section>
 
