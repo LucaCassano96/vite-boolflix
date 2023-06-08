@@ -34,6 +34,22 @@ export default{
         .then(res =>{ /* mi ritorna res che è l'oggetto completo quello che ci interessa è res.data.results e me lo vado a salvare nell'arrey store.moviesList (scrivo nello store)*/
         store.moviesList = res.data.results
         })
+
+        /* /////////////////////////////////////////////////// */
+
+        /* seconda chiamata axios per le serie tv stessi passaggi */
+
+      let variablesTvSeries = store.api_selection_tvSeries ;
+
+      if (store.searchMovie !== "") {
+        variablesTvSeries += `${store.apiParameter}=${store.searchMovie}`
+      }
+
+      axios.get(variablesTvSeries) 
+        .then(res =>{ 
+        store.seriesList = res.data.results
+        })
+
         .catch(err =>{ /* in questo modo possiamo andarci ad intercettare eventuali errori */
           console.log(err);
         })
