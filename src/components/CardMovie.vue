@@ -7,17 +7,7 @@ export default {
         detailsMovie: Object,
         /* ci facciamo restituire da MovieList tramite details e le props un oggetto  */
     },
-    data(){
-        return{
-
-        }
-    },
-    methods : {
-       
-           getImagePath: function (){
-            return new URL("https://image.tmdb.org/t/p/w342", import.meta.url).href;
-           }
-    }
+ 
 }
 
 </script>
@@ -28,8 +18,11 @@ export default {
     <h4>{{ detailsMovie.title }}</h4>
     <div>{{ detailsMovie.original_title }}</div>
 
-    <img :src="getImagePath(`${detailsMovie.poster_path}`)" alt="img" />
-    
+    <img v-if="detailsMovie.poster_path !== null" :src="`https://image.tmdb.org/t/p/w342${detailsMovie.poster_path}`" alt="img" />
+
+    <img v-else="detailsMovie.poster_path === null" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png" alt=">immagine di copertina mancante">
+
+
     <div>{{ detailsMovie.vote_average }}</div>
     
     <div v-if="detailsMovie.original_language !== ''"><img :src="'src/assets/' + detailsMovie.original_language + '.jpg'" alt="unrecognized language"></div>

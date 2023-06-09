@@ -18,7 +18,11 @@ export default{
     <div class="cardTvSeries">
         
         <h4>{{ detailSerie.name }}</h4>   
-        <div>{{ detailSerie.original_name }}</div> 
+        <div>{{ detailSerie.original_name }}</div>
+         
+        <img v-if="detailSerie.poster_path !== null" :src="`https://image.tmdb.org/t/p/w342${detailSerie.poster_path}`" alt="img" />
+
+        <img v-else="detailSerie.poster_path === null" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png" alt=">immagine di copertina mancante">
         <div>{{ detailSerie.vote_average }}</div>
 
         <div v-if="detailSerie.original_language !== ''"><img :src="'src/assets/' + detailSerie.original_language + '.jpg'" alt="unrecognized language"></div>
