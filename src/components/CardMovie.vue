@@ -7,8 +7,7 @@ export default {
         detailsMovie: Object,
         /* ci facciamo restituire da MovieList tramite details e le props un oggetto  */
     },
- 
-}
+    }
 
 </script>
 
@@ -23,7 +22,7 @@ export default {
     <img v-else="detailsMovie.poster_path === null" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png" alt=">immagine di copertina mancante">
 
 
-    <div>{{ detailsMovie.vote_average }}</div>
+    <div>{{ detailsMovie.vote_average.toFixed(0) / 2 }}</div>
     
     <div v-if="detailsMovie.original_language !== ''"><img :src="'src/assets/' + detailsMovie.original_language + '.jpg'" alt="unrecognized language"></div>
     <div v-else ="detailsMovie.original_language === ''">unrecognized language</div>  <!-- se la lingua non c'è viene scritto unrecognized language-->

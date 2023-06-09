@@ -1,7 +1,7 @@
 <script>
 /* tolgo setup  */
-
 /* iporto i vari componenti dell'app */
+
 
 import axios from "axios"; /* dobbiamo importare axsios (con path breve) non è come SASS */
 import { store } from "./store.js" /* importo lo store in app */
@@ -75,6 +75,7 @@ export default {
     <MovieList />
     <SerieTvList />
   </main>
+  
 </template>
 
 <style lang="scss"> /* Inserisco lang per far funzionare il scss, qui tolgo lo scope  */
