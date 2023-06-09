@@ -24,10 +24,6 @@ export default{
         <div v-if="detailSerie.original_language !== ''"><img :src="'src/assets/' + detailSerie.original_language + '.jpg'" alt="unrecognized language"></div>
         <div v-else ="detailSerie.original_language === ''">unrecognized language</div> 
 
-        <div v-if="detailSerie.origin_country.length === 0"></div> 
-        <div v-else="detailSerie.origin_country.length !== 0">{{ detailSerie.origin_country[0] }}</div>
-       <!--  <div v-if="detailSerie.vote_average  % 2 ===0">{{ detailSerie.vote_average }}</div>
-        <div v-else-if="detailSerie.vote_average % 2 !==0"></div> -->
     </div> 
 
 </template>
